@@ -1,0 +1,17 @@
+<p>register works!</p>
+
+<div class="container">
+    <form [formGroup]="registrationForm " (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="email" >Email address</label>
+          <input id="email" formControlName="email" required type="email">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="name" > Name:</label>
+            <input id="name" formControlName="name" required >
+          </div>
+        
+        <button type="submit" [disabled]="!registrationForm.valid">Register</button>
+      </form>
+</div>
