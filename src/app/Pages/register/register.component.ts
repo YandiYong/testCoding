@@ -11,7 +11,7 @@ export class RegisterComponent {
 
      //It declares that the 'registrationForm' represents the reactiveForm  
      registrationForm: FormGroup;
-     url ="http://localhost:3000/employeeData" ;
+     url ="http://localhost:3000/employeeData.json" ;
      constructor(private fb: FormBuilder, private http: HttpClient){
             //This serves as a container that demonstrate how to initialse the reactive form
             this.registrationForm = this.fb.group({
@@ -25,6 +25,7 @@ export class RegisterComponent {
        onSubmit(){
         //The if statement chcks if the data added is valid then if true that will be added to our json file using the (http.post)
          if(this.registrationForm.valid){
+          console.log("HELLLLLLLLLLLLLLLLLLLLLLLLL");
            this.http.post(this.url,this.registrationForm.value).subscribe((response)=>{
             console.log("Data added successfully", response);
            },
